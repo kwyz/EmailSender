@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.userAccountEntire">
+   <children>
+      <Pane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #404040;">
+         <children>
+            <Pane prefHeight="46.0" prefWidth="1200.0" style="-fx-background-color: #4286f4;">
+               <children>
+                  <ImageView fitHeight="29.0" fitWidth="63.0" layoutX="1155.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@res/email.png" />
+                     </image>
+                  </ImageView>
+                  <Circle fx:id="messageCountSymbol" fill="#fcfcfc" layoutX="1186.0" layoutY="14.0" radius="9.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label fx:id="messageCountNumber" layoutX="1183.0" layoutY="6.0" text="0">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="39.0" fitWidth="37.0" layoutX="14.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@res/avatar.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="usernameLabel" layoutX="64.0" layoutY="16.0" prefHeight="17.0" prefWidth="215.0">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutY="46.0" prefHeight="754.0" prefWidth="200.0" style="-fx-background-color: #292929;">
+               <children>
+                  <Button fx:id="newMessage" layoutX="32.0" layoutY="244.0" mnemonicParsing="false" onAction="#newMessageClicked" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4286f4;" text="New" textAlignment="CENTER" textFill="WHITE">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="mailBox" layoutX="32.0" layoutY="323.0" mnemonicParsing="false" onAction="#mailBoxClicked" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4286f4;" text="Mail box" textFill="WHITE" />
+                  <Button fx:id="settings" layoutX="32.0" layoutY="403.0" mnemonicParsing="false" onAction="#settingsClicked" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4286f4;" text="Settings" textFill="WHITE" />
+                  <Label alignment="CENTER" layoutX="16.0" layoutY="722.0" prefHeight="18.0" prefWidth="169.0" text="Copyright sSignature © 2017" textFill="#656464">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="settings2" layoutX="31.0" layoutY="472.0" mnemonicParsing="false" onAction="#settingsClicked" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4286f4;" text="Exit" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane fx:id="newMessagePane" layoutX="200.0" layoutY="46.0" prefHeight="754.0" prefWidth="1000.0" visible="false">
+               <children>
+                  <TextArea fx:id="messageText" layoutX="11.0" layoutY="69.0" prefHeight="341.0" prefWidth="979.0" wrapText="true" />
+                  <TextField fx:id="messageTitle" layoutX="149.0" layoutY="27.0" prefHeight="21.0" prefWidth="697.0" />
+                  <Label layoutX="14.0" layoutY="31.0" prefHeight="17.0" prefWidth="270.0" text="Title" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="send" layoutX="11.0" layoutY="701.0" mnemonicParsing="false" onAction="#sendMessageClicked" prefHeight="39.0" prefWidth="190.0" style="-fx-background-color: #4286f4;" text="SEND" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="loadFile" layoutX="796.0" layoutY="701.0" mnemonicParsing="false" onMouseClicked="#loadFileClicked" prefHeight="39.0" prefWidth="190.0" style="-fx-background-color: #4286f4;" text="LOAD FILE" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <ListView fx:id="userList" layoutX="12.0" layoutY="459.0" onMouseClicked="#stackUsenameForSending" prefHeight="169.0" prefWidth="440.0" style="-fx-font-size: 14;" styleClass="listView" stylesheets="@style.css" />
+                  <Label layoutX="12.0" layoutY="425.0" prefHeight="17.0" prefWidth="235.0" text="Select user's to send" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="mailGet" layoutX="548.0" layoutY="459.0" onMouseClicked="#stackUsenameForSending" prefHeight="169.0" prefWidth="440.0" style="-fx-font-size: 14;" styleClass="listView" stylesheets="@style.css" />
+                  <Label layoutX="548.0" layoutY="425.0" prefHeight="17.0" prefWidth="235.0" text="Users witch wiil be get mail" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fileNameLabel" layoutX="14.0" layoutY="645.0" prefHeight="17.0" prefWidth="972.0" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pass" layoutX="413.0" layoutY="721.0" prefHeight="17.0" prefWidth="215.0" textFill="RED" />
+               </children>
+            </Pane>
+            <Pane fx:id="mailBoxPane" layoutX="200.0" layoutY="46.0" prefHeight="754.0" prefWidth="1000.0">
+               <children>
+                  <TextArea fx:id="mesageContentArea" layoutX="556.0" layoutY="2.0" prefHeight="680.0" prefWidth="440.0" />
+                  <ListView fx:id="mesageTable" layoutX="-1.0" layoutY="3.0" onMouseClicked="#loadMessgae" prefHeight="754.0" prefWidth="556.0" />
+                  <Button fx:id="downloadFile" layoutX="645.0" layoutY="694.0" mnemonicParsing="false" onAction="#downloadFileClicked" prefHeight="46.0" prefWidth="263.0" style="-fx-background-color: #4286f4;" text="Download File" textAlignment="CENTER" textFill="WHITE">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="settingsPane" layoutX="200.0" layoutY="46.0" prefHeight="754.0" prefWidth="1000.0" visible="false">
+               <children>
+                  <TextField fx:id="dbHost" layoutX="322.0" layoutY="113.0" prefHeight="25.0" prefWidth="528.0" />
+                  <Label layoutX="133.0" layoutY="115.0" text="DataBase Host" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="135.0" layoutY="151.0" prefHeight="21.0" prefWidth="138.0" text="DataBase Name" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dbName" layoutX="322.0" layoutY="149.0" prefHeight="25.0" prefWidth="528.0" />
+                  <Label layoutX="133.0" layoutY="192.0" text="DataBase User" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dbUser" layoutX="322.0" layoutY="190.0" prefHeight="25.0" prefWidth="528.0" />
+                  <Button fx:id="saveSettings" layoutX="480.0" layoutY="672.0" mnemonicParsing="false" onAction="#saveSettingsClicked" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: #4286f4;" text="Save" textFill="WHITE" />
+                  <Label layoutX="135.0" layoutY="270.0" prefHeight="21.0" prefWidth="128.0" text="SMTP E-mail" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="smtpEmail" layoutX="322.0" layoutY="268.0" prefHeight="25.0" prefWidth="528.0" />
+                  <Label layoutX="133.0" layoutY="311.0" text="SMTP Password" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="smtpPass" layoutX="322.0" layoutY="309.0" prefHeight="25.0" prefWidth="528.0" />
+                  <Label layoutX="133.0" layoutY="230.0" text="DataBase Password" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dbPass" layoutX="322.0" layoutY="228.0" prefHeight="25.0" prefWidth="528.0" />
+                  <Label layoutX="133.0" layoutY="354.0" text="File's Store Location" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="smtpPass1" layoutX="322.0" layoutY="352.0" prefHeight="25.0" prefWidth="528.0" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,12 @@
+.listview_cell_empty {
+    -fx-background-color: khaki;
+    -fx-border-color: grey
+}
+
+.listview_cell:hover{
+    -fx-background-color: blanchedalmond;
+}
+
+.listview_cell:selected{
+    -fx-background-color: chocolate;
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Main">
+   <children>
+      <Pane layoutX="-6.0" layoutY="-2.0" prefHeight="800.0" prefWidth="1212.0">
+         <children>
+            <Pane layoutY="-3.0" prefHeight="806.0" prefWidth="592.0">
+               <children>
+                  <ImageView fitHeight="806.0" fitWidth="772.0" layoutX="-1.0" layoutY="-1.0">
+                     <image>
+                        <Image url="@res/Untitled.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="logPane" layoutX="770.0" layoutY="2.0" prefHeight="806.0" prefWidth="444.0" style="-fx-background-color: #404040;">
+               <children>
+                  <TextField fx:id="logUsername" alignment="CENTER" layoutX="26.0" layoutY="193.0" prefHeight="39.0" prefWidth="393.0" promptText="Username/E-mail" style="-fx-background-color: #404040; -fx-border-color: #000000; -fx-text-fill: #ffffff;">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets top="51.0" />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="NONE" />
+                     </cursor>
+                  </TextField>
+                  <Button fx:id="signInButton" layoutX="26.0" layoutY="364.0" mnemonicParsing="false" onAction="#logInSystem" prefHeight="39.0" prefWidth="393.0" style="-fx-background-color: #404040; -fx-border-color: #000000; -fx-text-fill: #ffffff;" text="SignIn">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <PasswordField fx:id="logpassword" alignment="CENTER" layoutX="26.0" layoutY="266.0" prefHeight="39.0" prefWidth="393.0" promptText="Password" style="-fx-background-color: #404040; -fx-border-color: #000000; -fx-text-fill: #ffffff;">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="94.0" prefHeight="74.0" prefWidth="393.0" style="-fx-text-fill: #ffffff;" text="SIgnIn">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="26.0" layoutY="443.0" prefHeight="21.0" prefWidth="169.0" text="Not yet created account?" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink fx:id="regSwitchHyperlink" layoutX="193.0" layoutY="438.0" onAction="#regSwitchHyperlink" text="Sing up" textFill="#058de8">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label layoutX="256.0" layoutY="443.0" prefHeight="21.0" prefWidth="37.0" text="now !" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="regPane" layoutX="770.0" layoutY="2.0" prefHeight="806.0" prefWidth="444.0" style="-fx-background-color: #404040;" visible="false">
+               <children>
+                  <TextField fx:id="username" alignment="CENTER" layoutX="26.0" layoutY="176.0" prefHeight="39.0" prefWidth="393.0" promptText="Username" style="-fx-background-color: #404040; -fx-border-color: #000000; -fx-text-fill: #ffffff;">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets top="51.0" />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="NONE" />
+                     </cursor>
+                  </TextField>
+                  <TextField fx:id="Email" alignment="CENTER" layoutX="26.0" layoutY="255.0" onAction="#fieldClick" prefHeight="39.0" prefWidth="393.0" promptText="E-mail" style="-fx-background-color: #404040; -fx-border-color: #000000; -fx-text-fill: #ffffff;">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets top="51.0" />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="NONE" />
+                     </cursor>
+                  </TextField>
+                  <Button fx:id="signUpButton" layoutX="26.0" layoutY="471.0" mnemonicParsing="false" onAction="#signUpButton" prefHeight="39.0" prefWidth="393.0" style="-fx-background-color: #404040; -fx-border-color: #000000; -fx-text-fill: #ffffff;" text="SignUp">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <CheckBox fx:id="userTermsBox" layoutX="26.0" layoutY="410.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="360.0" text="I agree to the UserData policy and accept terms." textFill="WHITE" />
+                  <PasswordField fx:id="password" alignment="CENTER" layoutX="26.0" layoutY="336.0" prefHeight="39.0" prefWidth="393.0" promptText="Password" style="-fx-background-color: #404040; -fx-border-color: #000000; -fx-text-fill: #ffffff;">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="77.0" prefHeight="74.0" prefWidth="393.0" style="-fx-text-fill: #ffffff;" text="SIgnUp">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="goBackButton" layoutX="26.0" layoutY="25.0" mnemonicParsing="false" onAction="#actionBack" onMouseClicked="#actionBack" prefHeight="29.0" prefWidth="94.0" style="-fx-border-color: #000000; -fx-background-color: #404040;" text="Go back" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
